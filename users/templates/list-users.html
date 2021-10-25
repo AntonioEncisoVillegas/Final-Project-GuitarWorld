@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-12 my-5">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success text-center" role="alert">
+                        <strong>{{message}}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+                <table class="table table-striped tablas" id="TableUsers">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>USERNAME</th>
+                            <th>FULL NAME</th>
+                            <th>EMAIL</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td scope="row">{{user.username}}</td>
+                                <td>{{user.first_name}} {{user.last_name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>
+                                    <button
+                                        class="btn btn-danger btnEliminarUser"
+                                        idUser="{{user.id}}"
+                                        >D
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+/*=============================================
+DELETE USER
+=============================================*/
+  $(".tablas").on("click", ".btnEliminarUser", function () {
+    var idUser = $(this).attr("idUser");
+    //console.log(idUser);
+    swal({
+      title: "¿Are you sure?",
+      text: "once deleted you will lost permanently the user",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        window.location = "/user/delete/" + idUser;
+      } else {
+        swal("You user is safe");
+      }
+    });
+  });
+    </script>
+{% endblock scripts %}

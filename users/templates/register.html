@@ -1,0 +1,74 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</html>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                {% if form.errors %}
+                    {% for campo in form %}
+                        {% if campo.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                <strong>{{campo.label|capfirst}}: {{campo.errors}}</strong>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="card">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="row justify-content-center">
+                                <div class="form-group col-10 mt-3">
+                                    <label for="">{{form.username.label}}</label>
+                                    {% render_field form.username class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <label for="">{{form.first_name.label}}</label>
+                                    {% render_field form.first_name class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <label for="">{{form.last_name.label}}</label>
+                                    {% render_field form.last_name class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <label for="">{{form.email.label}}</label>
+                                    {% render_field form.email class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <label for="">{{form.password1.label}}</label>
+                                    {% render_field form.password1 class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <label for="">{{form.password2.label}}</label>
+                                    {% render_field form.password2 class="form-control" %}
+                                </div>
+                                <div class="form-group col-10">
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

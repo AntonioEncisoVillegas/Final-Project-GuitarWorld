@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 text-center my-3"><h1>{{brand.name}}</h1></div>
+            {% for guitar in guitars1 %}
+                <div class="col-4 mt-3 pl-5 text-center">
+                    <div class="card" style="width: 18rem;">
+                        <img  src="{{guitar.image.url}}" height="300" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{% url 'guitarComercial-info' guitar.id %}" style="text-decoration: none;">{{guitar.name|truncatechars:20}}</a></h4>
+                            <p class="card-text">{{guitar.model}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for guitar in guitars2 %}
+                <div class="col-4 mt-3 pl-5 text-center">
+                    <div class="card" style="width: 18rem;">
+                        <img  src="{{guitar.image.url}}" height="300" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{% url 'guitarComercial-info' guitar.id %}" style="text-decoration: none;">{{guitar.name|truncatechars:20}}</a></h4>
+                            <p class="card-text">{{guitar.model}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col-12" style="height: 200px"></div>
+        </div>
+    </div>
+{% endblock content %}

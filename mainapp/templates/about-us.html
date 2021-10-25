@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                <img src="{% static 'img/guitarabout.jpeg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-6">
+                <h1 class="text-center">GUITAR WORLD</h1>
+                <p>
+Hello, I am Antonio, the founder of this project called "Guitar world". One day I had the intention of looking for many models of guitars only with the need to know more and also to see videos of what it sounded like. I realized that I had to go to multiple web applications already that all of them had information but there was not a single page with all that information gathered, many were paid and I did not feel that they gave me quality information about the instrument, so this need to collect quality information with really demonstrative and honest videos of how they sound in actually the instruments that we musicians like so much.
+<p></p>
+After coming from a country where it is world-renowned for making guitars by hand, I realized that there is not a website where I collect information not only about guitars from my country but from around the world, through this the need to collect at least one representative model of each country in the world so that more people know not only the commercial models but also the handmade guitars.</div>
+            <div class="col-12" style="margin-top: 100px"><h2 class="text-center">Our Team</h2></div>
+            <div class="col-3 mx-5 my-5 text-center">
+                <img src="{% static 'img/yo.jpg' %}" class="rounded-circle" height="130" width="130" alt="">
+                <p class="mt-3"><strong></strong></p>
+                <p> Antonio Enciso is an engineering student in the 7th semester of computer science, passionate about music and guitars, he was inspired by this project for his own needs and eager to connect everyone to discover new types of guitars and have the information very close and accessible</p>
+                <p class="mt-2">antonio_en.na@outlook.com</p>
+                <div class="row justify-content-center">
+                    <div class="col-2"><img src="{% static 'img/facebook.png' %}" height="30" width="32" alt=""></div>
+                    <div class="col-2"><img src="{% static 'img/instagram.png' %}" height="30" width="32" alt=""></div>
+                    <div class="col-2"><img src="{% static 'img/youtube.png' %}" height="30" width="32" alt=""></div>
+                </div>
+            </div>
+            <div class="col-3 mx-5 my-5 text-center">
+                <img src="{% static 'img/joan.jpg' %}" class="rounded-circle" height="130" width="130" alt="">
+                <p class="mt-3"><strong></strong></p>
+                <p>student from Tijuana BC in the career of computer engineering which has a taste for music and using technological knowledge to contribute something more to music as a project to make the search for guitars and interaction with other connoisseurs easier and more comfortable. of guitars
+                <p class="mt-2">joan.gradillas@outlook.com</p>
+                <div class="row justify-content-center">
+                    <div class="col-2"><img src="{% static 'img/facebook.png' %}" height="30" width="32" alt=""></div>
+                    <div class="col-2"><img src="{% static 'img/instagram.png' %}" height="30" width="32" alt=""></div>
+                    <div class="col-2"><img src="{% static 'img/youtube.png' %}" height="30" width="32" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
